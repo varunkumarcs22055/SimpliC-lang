@@ -43,6 +43,19 @@ This creates the `simplic.exe` (or `simplic` on Linux/Mac) executable that can r
 
 Now that you've compiled SimpliC, it's super easy to use! Just open your terminal and type:
 
+**Windows PowerShell:**
+```powershell
+# Run any SimpliC program
+.\simplic.exe myprogram.simplic
+
+# Try our example file
+.\simplic.exe example.simplic
+
+# Want to experiment? Start interactive mode
+.\simplic.exe
+```
+
+**Command Prompt (cmd) or Linux/Mac:**
 ```bash
 # Run any SimpliC program
 simplic.exe myprogram.simplic
