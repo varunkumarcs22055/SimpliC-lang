@@ -237,6 +237,17 @@ void run_lines(const std::vector<std::vector<std::string>> &lines, Environment &
                 std::string dtype = toks[1];
                 std::string name = (toks.size() >= 3) ? toks[2] : "";
                 
+                // Check for shorthand syntax: make x is 10
+                auto ispos = std::find(toks.begin(), toks.end(), std::string("is"));
+                if (ispos != toks.end() && ispos == toks.begin() + 2) {
+                    // Shorthand: make varname is value
+                    name = toks[1];
+                    size_t start = 3; // After "is"
+                    auto val = eval_expr(toks, start, toks.size(), env);
+                    env.set(name, val);
+                    ++i; continue;
+                }
+                
                 if (dtype == "number" || dtype == "word" || dtype == "yesno") {
                     auto eqpos = std::find(toks.begin(), toks.end(), std::string("="));
                     if (eqpos != toks.end()) {

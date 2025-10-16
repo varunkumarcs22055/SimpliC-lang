@@ -39,18 +39,19 @@ int main(int argc, char **argv) {
     }
 
     std::cout << "SimpliC REPL. Type 'exit' or 'quit' to leave." << std::endl;
-    std::string line, source;
+    Environment root(nullptr);
     
     while (true) {
         std::cout << "> ";
+        std::cout.flush();  // Ensure prompt is displayed immediately
+        
+        std::string line;
         if (!std::getline(std::cin, line)) break;
         if (line == "exit" || line == "quit") break;
+        if (line.empty()) continue;  // Skip empty lines
         
-        source += line + "\n";
-        
-        if (line.empty()) {
-            Environment root(nullptr);
-            auto lines = lex_source(source);
+        try {
+            auto lines = lex_source(line);
             size_t i = 0;
             Value ret = Value::make_nil();
             
@@ -59,7 +60,8 @@ int main(int argc, char **argv) {
             if (ret.type != Value::Type::Nil) {
                 std::cout << ret.to_string() << std::endl;
             }
-            source.clear();
+        } catch (const std::exception& e) {
+            std::cerr << "Error: " << e.what() << std::endl;
         }
     }
     return 0;
