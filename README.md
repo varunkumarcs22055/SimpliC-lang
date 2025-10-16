@@ -19,9 +19,29 @@ Tired of confusing syntax? Want to learn data structures without getting lost in
 
 ## Let's Get Started!
 
+### First, Compile SimpliC
+
+Before you can run SimpliC programs, you need to compile the interpreter. Don't worry, it's just one command!
+
+**Requirements:**
+- C++ compiler (GCC/MinGW for Windows, g++ for Linux/Mac)
+- That's it!
+
+**Compile the interpreter:**
+
+```bash
+# For Windows (MinGW)
+g++ -std=c++11 -o simplic.exe main.cpp interpreter.cpp dsa.cpp value_impl.cpp
+
+# For Linux/Mac
+g++ -std=c++11 -o simplic main.cpp interpreter.cpp dsa.cpp value_impl.cpp
+```
+
+This creates the `simplic.exe` (or `simplic` on Linux/Mac) executable that can run your SimpliC programs!
+
 ### Running Your First Program
 
-It's super easy! Just open your terminal and type:
+Now that you've compiled SimpliC, it's super easy to use! Just open your terminal and type:
 
 ```bash
 # Run any SimpliC program
