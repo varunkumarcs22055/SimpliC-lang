@@ -1,0 +1,76 @@
+# Compiled executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# DLL files (users will need to get these from MinGW)
+*.dll
+
+# Compiled dynamic libraries
+*.so
+*.so.*
+*.dylib
+
+# Compiler-specific files
+*.d
+*.slo
+*.pdb
+*.ilk
+*.exp
+*.gch
+*.pch
+
+# SimpliC program files (exclude all except examples)
+*.simplic
+!example.simplic
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build directories
+build/
+bin/
+obj/
+dist/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+*.log
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.stackdump
+
+# Documentation build
+*.pdf
+*.aux
+
+# Distribution files
+DISTRIBUTE.txt
+GITHUB_UPLOAD.md

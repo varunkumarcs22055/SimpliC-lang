@@ -1,0 +1,61 @@
+start program SimpliCDemo
+
+make word greeting = "Welcome to SimpliC!"
+show greeting
+
+make number a = 15
+make number b = 25
+make number sum = a plus b
+show "Sum:", sum
+
+make list numbers = [5, 2, 8, 1, 9, 3]
+show "Original list:", numbers
+numbers.sort()
+show "Sorted list:", numbers
+
+make stack myStack
+put 10 into myStack
+put 20 into myStack
+put 30 into myStack
+show "Stack top:", myStack.top
+takeout myStack
+show "Stack top after pop:", myStack.top
+
+make queue myQueue
+put 100 into myQueue
+put 200 into myQueue
+put 300 into myQueue
+show "Queue front:", myQueue.front
+takeout myQueue
+show "Queue front after dequeue:", myQueue.front
+
+make bst tree
+tree.insert(50)
+tree.insert(30)
+tree.insert(70)
+tree.insert(20)
+tree.insert(40)
+tree.insert(60)
+tree.insert(80)
+show "BST inorder traversal:", tree.inorder()
+
+define factorial with n
+    when n lessthan 2
+        giveback 1
+    done
+    giveback n times factorial(n minus 1)
+done
+
+make number result = factorial(5)
+show "Factorial of 5:", result
+
+make number age = 20
+when age morethan 18
+    show "Adult"
+otherwise
+    show "Minor"
+done
+
+show "SimpliC Demo Complete!"
+
+end program
